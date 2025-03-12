@@ -36,9 +36,7 @@
         }).addTo(map);
 
         
-        // fetch('data/buffer_zones.geojson')
-        fetch('https://raw.githubusercontent.com/benoit-poirier-nrc/nrc-ua-map-buffer/main/data/buffer_zones.geojson')
-        //fetch('https://benoit-poirier-nrc.github.io/nrc-ua-map-buffer/data/buffer_zones.geojson')
+        fetch('https://raw.githubusercontent.com/benoit-poirier-nrc/nrc-ua-map-buffer/main/data/buffer_zones_data_latest.geojson')
             .then(response => response.json())
             .then(data => {
                 L.geoJson(data, {
