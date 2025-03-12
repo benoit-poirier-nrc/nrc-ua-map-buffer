@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Buffer Zones Map</title>
+    <title>NRC Buffer Zones Map</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--
+     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
         crossorigin="anonymous" />
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
         crossorigin="anonymous"></script>
-    -->
-
-    <!-- local dev -->
-    <link rel="stylesheet" href="offline/leaflet/leaflet.css">
-    <script src="offline/leaflet/leaflet.js"></script>
 
     <style>
         #map { height: 600px; width: 100%; }
@@ -40,8 +35,10 @@
             maxZoom: 19
         }).addTo(map);
 
-        /*
-        fetch('data/buffer_zones.geojson')
+        
+        // fetch('data/buffer_zones.geojson')
+        //fetch('https://raw.githubusercontent.com/benoit-poirier-nrc/nrc-ua-map-buffer/main/data/buffer_zones.geojson')
+        fetch('https://benoit-poirier-nrc.github.io/nrc-ua-map-buffer/data/buffer_zones.geojson')
             .then(response => response.json())
             .then(data => {
                 L.geoJson(data, {
@@ -51,35 +48,7 @@
                     }
                 }).addTo(map);
             })
-            .catch(error => console.error("Error loading GeoJSON:", error));
-        */
-        fetch('data/buffer_zones.geojson')
-    .then(response => response.json())
-    .then(data => {
-        L.geoJson(data, {
-            style: function(feature) {
-                var colors = { "Critical": "black", "High": "red", "Moderate": "orange" };
-
-                var borderOffset = {
-                    "Critical": -1000,  // Shrink black border inward by 1km
-                    "High": -500,       // Shrink red border inward by 0.5km
-                    "Moderate": 0       // Keep orange border at normal size
-                };
-
-                return {
-                    color: colors[feature.properties.zone],
-                    weight: 2, 
-                    fillOpacity: 0.3,
-                    fill: true,
-                    fillColor: colors[feature.properties.zone],
-                    dashArray: null, 
-                    opacity: 1
-                };
-            }
-        }).addTo(map);
-    })
-    .catch(error => console.error("Error loading GeoJSON:", error));
-
+            .catch(error => console.error("Error loading GeoJSON:", error));    
 
 </script>
 </body>
