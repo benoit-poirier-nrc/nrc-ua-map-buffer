@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 # Configuration
 API_URL = "https://deepstatemap.live/api/history/last"
 RUSSIA_BORDER_FILE = "input/rus_adm0_osm_clipped.geojson"
-UKRAINE_BORDER_FILE = "input/ukr_adm0_no_blacksea_osm.geojson"
+UKRAINE_BORDER_FILE = "input/ukr_adm0_no_blacksea_buffer_osm.geojson"
 OUTPUT_DIR_LAST = "data/last"
 OUTPUT_DIR_ARCHIVE = "data/archive"
 OUTPUT_LAST_FILENAME = "buffer_zones_data_last.geojson"
