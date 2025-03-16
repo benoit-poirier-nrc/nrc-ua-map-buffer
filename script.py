@@ -37,9 +37,8 @@ OCCUPIED_TERRITORIES = frozenset({"CADR and CALR", "Occupied", "Occupied Crimea"
 BUFFER_DISTANCES = {
     "Critical": 9000,   # 9 km
     "High": 40000,      # 40 km
-    "Moderate": 60000   # 60 km
+    "Moderate": 80000   # 80 km
 }
-
 
 def fetch_deepstatemap_data() -> dict:
     """

@@ -1,0 +1,13 @@
+Group,Title,Latitude,Longitude,Level,Area
+NRC,"Country Office",50.45,30.523611,2,CO
+NRC,"North Area Office",50.4545,30.5303,3,NAO
+NRC,"South Area Office",46.47747,30.73262,3,SAO
+NRC,"East Area Office",48.4675,35.04,3,EAO
+NRC,"West Area Office",49.841952,24.0315921,3,WAO
+NRC,"Sloviansk",48.85061,37.61408,4,EAO
+NRC,"Kharkiv",49.9925,36.231111,4,EAO
+NRC,"Zaporizhzhia",47.85,35.1175,4,EAO
+NRC,"Sumy",50.9077,34.7981,4,NAO
+NRC,"Chernihiv",51.4982,31.2893,4,NAO
+NRC,"Mykolaiv",46.9750,31.9946,4,SAO
+NRC,"Kherson",46.6354,32.6169,4,SAO
