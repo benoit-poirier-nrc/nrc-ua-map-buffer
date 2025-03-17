@@ -103,37 +103,6 @@
             })
             .catch(error => console.error("Error loading GeoJSON:", error));
 
-        /* Add office markers with size based on level */
-        $.get('./input/office_location.csv', function(csvString) {
-            var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;            
-            var sizeFactor = {
-                2: 0.9, 
-                3: 0.7,
-                4: 0.5
-            };            
-            var defaultSizeFactor = 0.5;            
-            for (var i in data) {
-                var row = data[i];
-                var level = parseInt(row.Level);
-                var factor = sizeFactor[level] || defaultSizeFactor;                
-                var width = Math.round(25 * factor);
-                var height = Math.round(41 * factor);
-                var customIcon = L.icon({
-                    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-                    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-                    iconSize: [width, height],
-                    iconAnchor: [width/2, height],  
-                    popupAnchor: [1, -height + 5],  
-                    shadowSize: [height, height]    
-                });                
-                var marker = L.marker([row.Latitude, row.Longitude], {
-                    icon: customIcon,
-                    opacity: 1
-                }).bindPopup(row.Title);  
-                marker.addTo(map);
-            }
-        });
-
         /* Add legend to the map */
         var legend = L.control({ position: 'bottomright' });
         legend.onAdd = function(map) {
